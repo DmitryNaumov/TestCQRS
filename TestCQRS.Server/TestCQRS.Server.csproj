@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{68E1D291-E95B-41EF-82EF-B11DF4604D5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TestCQRS.Server</RootNamespace>
+    <AssemblyName>TestCQRS.Server</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\CommandCompletedEventArgs.cs" />
+    <Compile Include="Commands\CommandEventArgs.cs" />
+    <Compile Include="Commands\CommandFailedEventArgs.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandProcessor.cs" />
+    <Compile Include="Commands\ICommandProcessorFactory.cs" />
+    <Compile Include="Commands\Impl\UnitOfWork.cs" />
+    <Compile Include="Commands\Impl\UnitOfWorkFactory.cs" />
+    <Compile Include="Commands\IUnitOfWork.cs" />
+    <Compile Include="Commands\IUnitOfWorkFactory.cs" />
+    <Compile Include="DomainModel\AcquireReason.cs" />
+    <Compile Include="DomainModel\ReleaseAction.cs" />
+    <Compile Include="DomainModel\DomainEventArgs.cs" />
+    <Compile Include="DomainModel\IDomainModelState.cs" />
+    <Compile Include="DomainModel\IStateManager.cs" />
+    <Compile Include="DomainModel\IAggregateRoot.cs" />
+    <Compile Include="Events\IEventHandler.TEvent.cs" />
+    <Compile Include="Events\Event.cs" />
+    <Compile Include="Events\Event.TArgs.cs" />
+    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="Events\IEventHandler.cs" />
+    <Compile Include="Events\IEventPublisher.cs" />
+    <Compile Include="Events\IEventStore.cs" />
+    <Compile Include="Commands\ICommandService.cs" />
+    <Compile Include="Events\IEventDispatcher.cs" />
+    <Compile Include="Events\IEventHandlerFactory.cs" />
+    <Compile Include="Events\Impl\EventDispatcher.cs" />
+    <Compile Include="Events\Impl\EventHandlerFactory.cs" />
+    <Compile Include="IServer.cs" />
+    <Compile Include="Queries\QueryFailedEventArgs.cs" />
+    <Compile Include="Queries\IParameter.cs" />
+    <Compile Include="Queries\ISpecification.cs" />
+    <Compile Include="Queries\QueryCompletedEventArgs.cs" />
+    <Compile Include="Queries\QueryEventArgs.cs" />
+    <Compile Include="Queries\IQueryService.cs" />
+    <Compile Include="Queries\IQuery.cs" />
+    <Compile Include="Server.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
