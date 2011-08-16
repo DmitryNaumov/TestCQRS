@@ -67,10 +67,10 @@
     <Compile Include="Events\IEventPublisher.cs" />
     <Compile Include="Events\IEventStore.cs" />
     <Compile Include="Commands\ICommandService.cs" />
-    <Compile Include="Events\IEventDispatcher.cs" />
     <Compile Include="Events\IEventHandlerFactory.cs" />
     <Compile Include="Events\Impl\EventDispatcher.cs" />
     <Compile Include="Events\Impl\EventHandlerFactory.cs" />
+    <Compile Include="Events\Impl\IEventDispatcher.cs" />
     <Compile Include="IServer.cs" />
     <Compile Include="Queries\QueryFailedEventArgs.cs" />
     <Compile Include="Queries\IParameter.cs" />
