@@ -3,10 +3,11 @@
 	using System;
 	using TestCQRS.Server.Events;
 
-	public interface IUnitOfWork : IDisposable
+	public interface IUnitOfWork : IEventPublisher, IDisposable
 	{
-		void RaiseEvent(IEvent @event);
-
+		/// <summary>
+		/// Commits all events made in the current <see cref="IUnitOfWork"/> to the <see cref="IEventStore"/>.
+		/// </summary>
 		void Commit();
 	}
 }

@@ -28,5 +28,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestCQRS.Infrastructure\TestCQRS.Infrastructure.csproj">
+      <Project>{E83600B4-46E0-4BE2-9B49-288EB0CD632A}</Project>
+      <Name>TestCQRS.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

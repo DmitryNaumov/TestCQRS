@@ -5,6 +5,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCQRS.Server", "TestCQRS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCQRS.ServerHost", "TestCQRS.ServerHost\TestCQRS.ServerHost.csproj", "{1BC09D87-8210-401A-8309-3146D6D173ED}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B8DAFE24-E27B-4366-BBA1-CFD3A13E1032}"
+	ProjectSection(SolutionItems) = preProject
+		README = README
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCQRS.Infrastructure", "TestCQRS.Infrastructure\TestCQRS.Infrastructure.csproj", "{E83600B4-46E0-4BE2-9B49-288EB0CD632A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +26,10 @@ Global
 		{1BC09D87-8210-401A-8309-3146D6D173ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BC09D87-8210-401A-8309-3146D6D173ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BC09D87-8210-401A-8309-3146D6D173ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E83600B4-46E0-4BE2-9B49-288EB0CD632A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E83600B4-46E0-4BE2-9B49-288EB0CD632A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E83600B4-46E0-4BE2-9B49-288EB0CD632A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E83600B4-46E0-4BE2-9B49-288EB0CD632A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

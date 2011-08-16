@@ -19,7 +19,7 @@
 		/// Releases the <see cref="IDomainModelState"/>.
 		/// </summary>
 		/// <param name="model">Model to release.</param>
-		/// <param name="releaseAction">Determines whether to accept new state of the model of not.</param>
+		/// <param name="releaseAction">Determines whether to accept new state of the model or not.</param>
 		void Release(IDomainModelState model, ReleaseAction releaseAction);
 	}
 }

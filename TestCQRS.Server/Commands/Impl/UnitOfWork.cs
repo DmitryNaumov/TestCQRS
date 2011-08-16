@@ -4,7 +4,7 @@
 
 	internal sealed class UnitOfWork : IUnitOfWork
 	{
-		public void RaiseEvent(IEvent @event)
+		public void Publish(IEvent @event)
 		{
 			// TODO:
 		}

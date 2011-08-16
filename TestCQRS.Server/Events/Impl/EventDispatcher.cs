@@ -3,6 +3,7 @@
 	using System;
 	using System.Collections.Generic;
 	using System.Linq.Expressions;
+	using System.Reflection;
 
 	internal sealed class EventDispatcher : IEventDispatcher
 	{
@@ -47,8 +48,11 @@
 			var handlerParameter = Expression.Parameter(typeof(IEventHandler), "handler");
 			var eventParameter = Expression.Parameter(eventType, "event");
 
-			var castExpr = Expression.Convert(handlerParameter, typeof(IEventHandler<>).MakeGenericType(eventType));
-			var invokeExpr = Expression.Call(castExpr, "HandleEvent", null, eventParameter);
+			var handlerType = typeof(IEventHandler<>).MakeGenericType(eventType);
+			var handleMethod = handlerType.GetMethod("Handle", BindingFlags.Public | BindingFlags.Instance);
+
+			var castExpr = Expression.Convert(handlerParameter, handlerType);
+			var invokeExpr = Expression.Call(castExpr, handleMethod, eventParameter);
 			var lambdaExpr = Expression.Lambda<Action<IEventHandler, IEvent>>(invokeExpr, handlerParameter, eventParameter);
 
 			return lambdaExpr.Compile();

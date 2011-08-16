@@ -44,7 +44,7 @@ namespace TestCQRS.Server
 					using (var unitOfWork = _unitOfWorkFactory.Create())
 					{
 						// create processor for the command
-						var processor = _commandProcessorFactory.Create(unitOfWork, command);
+						var processor = _commandProcessorFactory.Create(command);
 
 						// validate command against the model
 						processor.PreValidate(model);
