@@ -1,6 +1,6 @@
-﻿namespace TestCQRS.Server.Events
+﻿namespace TestCQRS.Server.Events.Impl
 {
-	public interface IEventDispatcher
+	internal interface IEventDispatcher
 	{
 		void Dispatch(IEvent @event, params object[] parameters);
 	}
