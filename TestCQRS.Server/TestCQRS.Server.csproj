@@ -48,11 +48,11 @@
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\ICommandProcessor.cs" />
     <Compile Include="Commands\ICommandProcessorFactory.cs" />
-    <Compile Include="Commands\Impl\UnitOfWork.cs" />
-    <Compile Include="Commands\Impl\UnitOfWorkFactory.cs" />
-    <Compile Include="Commands\IUnitOfWork.cs" />
-    <Compile Include="Commands\IUnitOfWorkFactory.cs" />
     <Compile Include="DomainModel\AcquireReason.cs" />
+    <Compile Include="DomainModel\Impl\UnitOfWork.cs" />
+    <Compile Include="DomainModel\Impl\UnitOfWorkFactory.cs" />
+    <Compile Include="DomainModel\IUnitOfWork.cs" />
+    <Compile Include="DomainModel\IUnitOfWorkFactory.cs" />
     <Compile Include="DomainModel\ReleaseAction.cs" />
     <Compile Include="DomainModel\DomainEventArgs.cs" />
     <Compile Include="DomainModel\IDomainModelState.cs" />
@@ -81,7 +81,10 @@
     <Compile Include="Queries\IQuery.cs" />
     <Compile Include="Server.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Commands\Impl\" />
+    <Folder Include="Queries\Impl\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
