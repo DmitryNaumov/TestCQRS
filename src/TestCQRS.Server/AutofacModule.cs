@@ -1,7 +1,6 @@
 ﻿namespace TestCQRS.Server
 {
 	using Autofac;
-	using TestCQRS.Server.Events.Impl;
 
 	internal sealed class AutofacModule : Module
 	{
@@ -9,7 +8,7 @@
 		{
 			base.Load(builder);
 
-			builder.RegisterType<EventHandlerFactory>().AsImplementedInterfaces().SingleInstance();
+			builder.RegisterType<Server>().AsImplementedInterfaces().SingleInstance();
 		}
 	}
 }

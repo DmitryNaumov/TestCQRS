@@ -43,6 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutofacModule.cs" />
+    <Compile Include="Commands\CommandCompletedEventArgs.cs" />
+    <Compile Include="Commands\CommandEventArgs.cs" />
+    <Compile Include="Commands\CommandFailedEventArgs.cs" />
+    <Compile Include="Commands\CommandPostedEventArgs.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandProcessor.cs" />
+    <Compile Include="Commands\ICommandProcessorFactory.cs" />
+    <Compile Include="Commands\ICommandService.cs" />
     <Compile Include="ComponentModel\Container.cs" />
     <Compile Include="ComponentModel\IServiceLocator.cs" />
     <Compile Include="ComponentModel\IStarter.cs" />
@@ -55,9 +63,50 @@
     <Compile Include="ComponentModel\Impl\DirectoryAssemblyEnumerator.cs" />
     <Compile Include="ComponentModel\Impl\Starter.cs" />
     <Compile Include="ComponentModel\Impl\NullServiceLocator.cs" />
+    <Compile Include="DomainModel\AcquireReason.cs" />
+    <Compile Include="DomainModel\AggregateRoot.cs" />
+    <Compile Include="DomainModel\DomainEventArgs.cs" />
+    <Compile Include="DomainModel\Entity.cs" />
+    <Compile Include="DomainModel\IAggregateRoot.cs" />
+    <Compile Include="DomainModel\IDomainModelState.cs" />
+    <Compile Include="DomainModel\IDomainModelStateManager.cs" />
+    <Compile Include="DomainModel\IEntity.cs" />
+    <Compile Include="DomainModel\Impl\DomainModelState.cs" />
+    <Compile Include="DomainModel\Impl\DomainModelStateManager.cs" />
+    <Compile Include="DomainModel\Impl\DomainModelStateProxy.cs" />
+    <Compile Include="DomainModel\Impl\UnitOfWork.cs" />
+    <Compile Include="DomainModel\Impl\UnitOfWorkFactory.cs" />
+    <Compile Include="DomainModel\IRepository.cs" />
+    <Compile Include="DomainModel\IUnitOfWork.cs" />
+    <Compile Include="DomainModel\IUnitOfWorkFactory.cs" />
+    <Compile Include="DomainModel\ReleaseAction.cs" />
+    <Compile Include="Events\Event.cs" />
+    <Compile Include="Events\Event.TArgs.cs" />
+    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="Events\IEventHandler.cs" />
+    <Compile Include="Events\IEventHandler.TEvent.cs" />
+    <Compile Include="Events\IEventHandlerFactory.cs" />
+    <Compile Include="Events\IEventPublisher.cs" />
+    <Compile Include="Events\IEventSource.cs" />
+    <Compile Include="Events\IEventStore.cs" />
+    <Compile Include="Events\Impl\EventDispatcher.cs" />
+    <Compile Include="Events\Impl\EventHandlerFactory.cs" />
+    <Compile Include="Events\Impl\IEventDispatcher.cs" />
+    <Compile Include="Queries\IParameter.cs" />
+    <Compile Include="Queries\IQuery.cs" />
+    <Compile Include="Queries\IQueryService.cs" />
+    <Compile Include="Queries\ISpecification.cs" />
+    <Compile Include="Queries\QueryCompletedEventArgs.cs" />
+    <Compile Include="Queries\QueryEventArgs.cs" />
+    <Compile Include="Queries\QueryFailedEventArgs.cs" />
+    <Compile Include="Queries\QueryPostedEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\Impl\" />
+    <Folder Include="Queries\Impl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
