@@ -4,6 +4,11 @@ namespace TestCQRS.Server.Queries
 
 	public sealed class QueryFailedEventArgs : QueryEventArgs
 	{
+		/// <summary>
+		/// Initializes a new instance of the <see cref="QueryFailedEventArgs"/> class.
+		/// </summary>
+		/// <param name="query">Original query.</param>
+		/// <param name="exception">Failure exception.</param>
 		public QueryFailedEventArgs(IQuery query, Exception exception)
 			: base(query)
 		{

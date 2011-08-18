@@ -2,7 +2,7 @@
 {
 	using TestCQRS.Server.Events;
 
-	public interface IAggregateRoot : IEventSource
+	public interface IAggregateRoot : IEntity, IEventSource
 	{
 		/// <summary>
 		/// Gets the unique identifier.

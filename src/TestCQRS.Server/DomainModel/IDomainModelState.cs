@@ -1,6 +1,6 @@
 ﻿namespace TestCQRS.Server.DomainModel
 {
-	public interface IDomainModelState
+	public interface IDomainModelState : IRepository
 	{
 		/// <summary>
 		/// Gets the model state version.

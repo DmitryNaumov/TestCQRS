@@ -7,7 +7,7 @@
 	{
 		private readonly Dictionary<Type, Type> _eventTypeToHandlerTypeMap = new Dictionary<Type, Type>();
 
-		public void RegisterType(Type handlerType)
+		public void Register(Type handlerType)
 		{
 			if (handlerType == null)
 			{

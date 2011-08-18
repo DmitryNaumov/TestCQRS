@@ -9,8 +9,9 @@
     <OutputType>Library</OutputType>
     <RootNamespace>TestCQRS.Server</RootNamespace>
     <AssemblyName>TestCQRS.Server</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,12 +46,19 @@
     <Compile Include="Commands\CommandCompletedEventArgs.cs" />
     <Compile Include="Commands\CommandEventArgs.cs" />
     <Compile Include="Commands\CommandFailedEventArgs.cs" />
+    <Compile Include="Commands\CommandPostedEventArgs.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\ICommandProcessor.cs" />
     <Compile Include="Commands\ICommandProcessorFactory.cs" />
     <Compile Include="DomainModel\AcquireReason.cs" />
+    <Compile Include="DomainModel\AggregateRoot.cs" />
+    <Compile Include="DomainModel\Entity.cs" />
+    <Compile Include="DomainModel\IEntity.cs" />
+    <Compile Include="DomainModel\Impl\DomainModelState.cs" />
+    <Compile Include="DomainModel\Impl\DomainModelStateProxy.cs" />
     <Compile Include="DomainModel\Impl\UnitOfWork.cs" />
     <Compile Include="DomainModel\Impl\UnitOfWorkFactory.cs" />
+    <Compile Include="DomainModel\IRepository.cs" />
     <Compile Include="DomainModel\IUnitOfWork.cs" />
     <Compile Include="DomainModel\IUnitOfWorkFactory.cs" />
     <Compile Include="DomainModel\ReleaseAction.cs" />
@@ -58,6 +66,7 @@
     <Compile Include="DomainModel\IDomainModelState.cs" />
     <Compile Include="DomainModel\IStateManager.cs" />
     <Compile Include="DomainModel\IAggregateRoot.cs" />
+    <Compile Include="DomainModel\Impl\DomainModelStateManager.cs" />
     <Compile Include="Events\IEventHandler.TEvent.cs" />
     <Compile Include="Events\Event.cs" />
     <Compile Include="Events\Event.TArgs.cs" />
@@ -72,6 +81,7 @@
     <Compile Include="Events\Impl\EventHandlerFactory.cs" />
     <Compile Include="Events\Impl\IEventDispatcher.cs" />
     <Compile Include="IServer.cs" />
+    <Compile Include="Queries\QueryPostedEventArgs.cs" />
     <Compile Include="Queries\QueryFailedEventArgs.cs" />
     <Compile Include="Queries\IParameter.cs" />
     <Compile Include="Queries\ISpecification.cs" />

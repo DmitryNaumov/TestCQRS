@@ -7,6 +7,9 @@ namespace TestCQRS.Server.Events
 	{
 		private static long _lastSeqNo;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Event"/> class.
+		/// </summary>
 		protected Event()
 		{
 			SeqNo = Interlocked.Increment(ref _lastSeqNo);
@@ -28,6 +31,12 @@ namespace TestCQRS.Server.Events
 		/// </summary>
 		public DateTime PostDate { get; private set; }
 
+		/// <summary>
+		/// Creates new instance of the <see cref="Event{TArgs}"/> initialized with the given arguments.
+		/// </summary>
+		/// <typeparam name="TArgs">Type of the event arguments.</typeparam>
+		/// <param name="args">Event arguments.</param>
+		/// <returns>Returns new event instance.</returns>
 		public static Event<TArgs> New<TArgs>(TArgs args)
 		{
 			return new Event<TArgs>(args);

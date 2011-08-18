@@ -9,11 +9,11 @@ namespace TestCQRS.Server
 	internal sealed class Server : IServer
 	{
 		private readonly IEventPublisher _eventPublisher;
-		private readonly IStateManager _stateManager;
+		private readonly IDomainModelStateManager _stateManager;
 		private readonly ICommandProcessorFactory _commandProcessorFactory;
 		private readonly IUnitOfWorkFactory _unitOfWorkFactory;
 
-		public Server(IEventPublisher eventPublisher, IStateManager stateManager, ICommandProcessorFactory commandProcessorFactory, IUnitOfWorkFactory unitOfWorkFactory)
+		public Server(IEventPublisher eventPublisher, IDomainModelStateManager stateManager, ICommandProcessorFactory commandProcessorFactory, IUnitOfWorkFactory unitOfWorkFactory)
 		{
 			_eventPublisher = eventPublisher;
 			_stateManager = stateManager;
@@ -30,8 +30,10 @@ namespace TestCQRS.Server
 			// TODO: should be asynchronous
 			try
 			{
+				_eventPublisher.Publish(Event.New(new CommandPostedEventArgs(command)));
+
 				// get model in the read-only (upgradable) mode
-				var model = _stateManager.Acquire(AcquireReason.ForCommand);
+				var model = _stateManager.AcquireReadModel(AcquireReason.ForCommand);
 
 				var releaseAction = ReleaseAction.DiscardChanges;
 				try
@@ -45,7 +47,7 @@ namespace TestCQRS.Server
 						processor.PreValidate(model);
 
 						// promote model to writable (exclusive) mode
-						_stateManager.Promote(model);
+						_stateManager.PromoteToWriteModel(model);
 
 						// execute command to mutate the model state
 						processor.Execute(model);
@@ -63,7 +65,7 @@ namespace TestCQRS.Server
 				finally
 				{
 					// release model
-					_stateManager.Release(model, releaseAction);
+					_stateManager.ReleaseModel(model, releaseAction);
 				}
 
 				_eventPublisher.Publish(Event.New(new CommandCompletedEventArgs(command)));
@@ -83,8 +85,10 @@ namespace TestCQRS.Server
 			// TODO: should be asynchronous
 			try
 			{
+				_eventPublisher.Publish(Event.New(new QueryPostedEventArgs(query)));
+
 				// get model in the read-only (shared) mode
-				var model = _stateManager.Acquire(AcquireReason.ForQuery);
+				var model = _stateManager.AcquireReadModel(AcquireReason.ForQuery);
 
 				try
 				{
@@ -93,7 +97,7 @@ namespace TestCQRS.Server
 				finally
 				{
 					// release model
-					_stateManager.Release(model, ReleaseAction.DiscardChanges);
+					_stateManager.ReleaseModel(model, ReleaseAction.DiscardChanges);
 				}
 
 				_eventPublisher.Publish(Event.New(new QueryCompletedEventArgs(query)));

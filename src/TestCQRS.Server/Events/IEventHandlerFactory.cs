@@ -5,10 +5,10 @@
 	public interface IEventHandlerFactory
 	{
 		/// <summary>
-		/// Registers handler type.
+		/// Registers handler.
 		/// </summary>
 		/// <param name="handlerType">Handler type.</param>
-		void RegisterType(Type handlerType);
+		void Register(Type handlerType);
 
 		/// <summary>
 		/// Creates a new handler instance to handle an event.

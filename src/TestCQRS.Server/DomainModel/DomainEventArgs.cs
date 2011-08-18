@@ -2,6 +2,10 @@
 {
 	public abstract class DomainEventArgs
 	{
+		/// <summary>
+		/// Initializes a new instance of the <see cref="DomainEventArgs"/> class.
+		/// </summary>
+		/// <param name="aggregateRoot">Source of event.</param>
 		protected DomainEventArgs(IAggregateRoot aggregateRoot)
 		{
 			AggregateRoot = aggregateRoot;

@@ -4,10 +4,15 @@ namespace TestCQRS.Server.Commands
 
 	public sealed class CommandFailedEventArgs : CommandEventArgs
 	{
-		public CommandFailedEventArgs(ICommand command, Exception failure)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="CommandFailedEventArgs"/> class.
+		/// </summary>
+		/// <param name="command">Original command.</param>
+		/// <param name="exception">Failure exception.</param>
+		public CommandFailedEventArgs(ICommand command, Exception exception)
 			: base(command)
 		{
-			Exception = failure;
+			Exception = exception;
 		}
 
 		/// <summary>

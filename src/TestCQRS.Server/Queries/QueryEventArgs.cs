@@ -2,6 +2,10 @@ namespace TestCQRS.Server.Queries
 {
 	public abstract class QueryEventArgs
 	{
+		/// <summary>
+		/// Initializes a new instance of the <see cref="QueryEventArgs"/> class.
+		/// </summary>
+		/// <param name="query">Original query.</param>
 		protected QueryEventArgs(IQuery query)
 		{
 			Query = query;
