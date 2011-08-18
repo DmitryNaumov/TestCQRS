@@ -9,17 +9,17 @@
 
 		public long Version { get; private set; }
 
-		public TAggregateRoot Get<TAggregateRoot>(long objectId) where TAggregateRoot : IAggregateRoot
+		public TRoot Get<TRoot>(long objectId) where TRoot : IAggregateRoot
 		{
 			IAggregateRoot instance;
-			if (!_identityMap.TryGetValue(Tuple.Create(typeof(TAggregateRoot), objectId), out instance))
+			if (!_identityMap.TryGetValue(Tuple.Create(typeof(TRoot), objectId), out instance))
 			{
 				throw new ArgumentException(
-					string.Format("Invalid object identifier '{0} #{1}' specified. Object not found.", typeof(TAggregateRoot).Name, objectId),
+					string.Format("Invalid object identifier '{0} #{1}' specified. Object not found.", typeof(TRoot).Name, objectId),
 					"objectId");
 			}
 
-			return (TAggregateRoot)instance;
+			return (TRoot)instance;
 		}
 	}
 }

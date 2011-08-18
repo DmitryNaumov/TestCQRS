@@ -5,15 +5,15 @@
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DomainEventArgs"/> class.
 		/// </summary>
-		/// <param name="aggregateRoot">Source of event.</param>
-		protected DomainEventArgs(IAggregateRoot aggregateRoot)
+		/// <param name="root">Source of event.</param>
+		protected DomainEventArgs(IAggregateRoot root)
 		{
-			AggregateRoot = aggregateRoot;
+			Root = root;
 		}
 
 		/// <summary>
 		/// Gets the <see cref="IAggregateRoot"/> that is source of event.
 		/// </summary>
-		public IAggregateRoot AggregateRoot { get; private set; }
+		public IAggregateRoot Root { get; private set; }
 	}
 }

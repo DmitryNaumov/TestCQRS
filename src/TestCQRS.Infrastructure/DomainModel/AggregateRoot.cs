@@ -4,7 +4,7 @@
 	using System.Collections.Generic;
 	using TestCQRS.Infrastructure.Events;
 
-	public abstract class AggregateRoot : IAggregateRoot
+	public abstract class AggregateRoot<TRoot> : IAggregateRoot where TRoot : IAggregateRoot
 	{
 		private readonly List<IEvent> _events = new List<IEvent>();
 
@@ -25,7 +25,7 @@
 				throw new ArgumentNullException("args");
 			}
 
-			if (args.AggregateRoot != this)
+			if (args.Root != this)
 			{
 				throw new InvalidOperationException("Invalid aggregate root specified.");
 			}
@@ -40,6 +40,18 @@
 			var events = _events.ToArray();
 			_events.Clear();
 			return events;
+		}
+
+		#endregion
+
+		#region IEntity Members
+
+		IAggregateRoot IEntity.Root
+		{
+			get
+			{
+				return this;
+			}
 		}
 
 		#endregion
