@@ -53,6 +53,7 @@
     <Compile Include="DomainModel\AcquireReason.cs" />
     <Compile Include="DomainModel\AggregateRoot.cs" />
     <Compile Include="DomainModel\Entity.cs" />
+    <Compile Include="DomainModel\IDomainModelStateManager.cs" />
     <Compile Include="DomainModel\IEntity.cs" />
     <Compile Include="DomainModel\Impl\DomainModelState.cs" />
     <Compile Include="DomainModel\Impl\DomainModelStateProxy.cs" />
@@ -64,7 +65,6 @@
     <Compile Include="DomainModel\ReleaseAction.cs" />
     <Compile Include="DomainModel\DomainEventArgs.cs" />
     <Compile Include="DomainModel\IDomainModelState.cs" />
-    <Compile Include="DomainModel\IStateManager.cs" />
     <Compile Include="DomainModel\IAggregateRoot.cs" />
     <Compile Include="DomainModel\Impl\DomainModelStateManager.cs" />
     <Compile Include="Events\IEventHandler.TEvent.cs" />
