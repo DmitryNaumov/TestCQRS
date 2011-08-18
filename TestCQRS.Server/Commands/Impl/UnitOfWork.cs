@@ -1,12 +1,12 @@
-﻿namespace TestCQRS.Server.Commands.Impl
+﻿namespace TestCQRS.Server.DomainModel.Impl
 {
-	using TestCQRS.Server.Events;
-
 	internal sealed class UnitOfWork : IUnitOfWork
 	{
-		public void Publish(IEvent @event)
+		private readonly IDomainModelState _model;
+
+		public UnitOfWork(IDomainModelState model)
 		{
-			// TODO:
+			_model = model;
 		}
 
 		public void Commit()

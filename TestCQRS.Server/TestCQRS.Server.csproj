@@ -52,7 +52,6 @@
     <Compile Include="Commands\Impl\UnitOfWorkFactory.cs" />
     <Compile Include="Commands\IUnitOfWork.cs" />
     <Compile Include="Commands\IUnitOfWorkFactory.cs" />
-    <Compile Include="Commands\UnitOfWorkContext.cs" />
     <Compile Include="DomainModel\AcquireReason.cs" />
     <Compile Include="DomainModel\ReleaseAction.cs" />
     <Compile Include="DomainModel\DomainEventArgs.cs" />
@@ -65,6 +64,7 @@
     <Compile Include="Events\IEvent.cs" />
     <Compile Include="Events\IEventHandler.cs" />
     <Compile Include="Events\IEventPublisher.cs" />
+    <Compile Include="Events\IEventSource.cs" />
     <Compile Include="Events\IEventStore.cs" />
     <Compile Include="Commands\ICommandService.cs" />
     <Compile Include="Events\IEventHandlerFactory.cs" />
@@ -81,9 +81,7 @@
     <Compile Include="Queries\IQuery.cs" />
     <Compile Include="Server.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataAccess\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

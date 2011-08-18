@@ -22,11 +22,6 @@ namespace TestCQRS.Server
 		}
 
 		/// <summary>
-		/// Raised when event occurs.
-		/// </summary>
-		public event Action<IEvent> EventOccured;
-
-		/// <summary>
 		/// Executes command.
 		/// </summary>
 		/// <param name="command">Command to execute.</param>
@@ -41,7 +36,7 @@ namespace TestCQRS.Server
 				var releaseAction = ReleaseAction.DiscardChanges;
 				try
 				{
-					using (var unitOfWork = _unitOfWorkFactory.Create())
+					using (var unitOfWork = _unitOfWorkFactory.Create(model))
 					{
 						// create processor for the command
 						var processor = _commandProcessorFactory.Create(command);

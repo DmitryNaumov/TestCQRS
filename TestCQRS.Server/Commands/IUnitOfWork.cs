@@ -1,9 +1,9 @@
-﻿namespace TestCQRS.Server.Commands
+﻿namespace TestCQRS.Server.DomainModel
 {
 	using System;
 	using TestCQRS.Server.Events;
 
-	public interface IUnitOfWork : IEventPublisher, IDisposable
+	public interface IUnitOfWork : IDisposable
 	{
 		/// <summary>
 		/// Commits all events made in the current <see cref="IUnitOfWork"/> to the <see cref="IEventStore"/>.

@@ -1,7 +1,7 @@
-﻿namespace TestCQRS.Server.Commands
+﻿namespace TestCQRS.Server.DomainModel
 {
 	public interface IUnitOfWorkFactory
 	{
-		IUnitOfWork Create();
+		IUnitOfWork Create(IDomainModelState model);
 	}
 }

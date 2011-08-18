@@ -1,11 +1,10 @@
-﻿namespace TestCQRS.Server.Commands.Impl
+﻿namespace TestCQRS.Server.DomainModel.Impl
 {
 	internal sealed class UnitOfWorkFactory : IUnitOfWorkFactory
 	{
-		public IUnitOfWork Create()
+		public IUnitOfWork Create(IDomainModelState model)
 		{
-			// TODO: create nested container bound to unit-of-work
-			return new UnitOfWork();
+			return new UnitOfWork(model);
 		}
 	}
 }
