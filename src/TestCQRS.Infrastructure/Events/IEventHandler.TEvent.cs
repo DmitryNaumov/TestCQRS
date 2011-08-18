@@ -1,4 +1,4 @@
-namespace TestCQRS.Server.Events
+namespace TestCQRS.Infrastructure.Events
 {
 	public interface IEventHandler<in TEvent> : IEventHandler where TEvent : IEvent
 	{

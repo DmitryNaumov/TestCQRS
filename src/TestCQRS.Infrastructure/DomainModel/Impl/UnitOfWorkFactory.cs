@@ -1,6 +1,6 @@
-﻿namespace TestCQRS.Server.DomainModel.Impl
+﻿namespace TestCQRS.Infrastructure.DomainModel.Impl
 {
-	using TestCQRS.Server.Events;
+	using TestCQRS.Infrastructure.Events;
 
 	internal sealed class UnitOfWorkFactory : IUnitOfWorkFactory
 	{

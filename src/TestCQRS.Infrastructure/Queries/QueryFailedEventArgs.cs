@@ -1,4 +1,4 @@
-namespace TestCQRS.Server.Queries
+namespace TestCQRS.Infrastructure.Queries
 {
 	using System;
 

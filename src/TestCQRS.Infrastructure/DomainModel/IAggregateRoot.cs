@@ -1,6 +1,6 @@
-﻿namespace TestCQRS.Server.DomainModel
+﻿namespace TestCQRS.Infrastructure.DomainModel
 {
-	using TestCQRS.Server.Events;
+	using TestCQRS.Infrastructure.Events;
 
 	public interface IAggregateRoot : IEntity, IEventSource
 	{

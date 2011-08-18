@@ -1,4 +1,4 @@
-﻿namespace TestCQRS.Server.Events.Impl
+﻿namespace TestCQRS.Infrastructure.Events.Impl
 {
 	using System;
 	using System.Collections.Generic;

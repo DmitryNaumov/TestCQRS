@@ -1,8 +1,8 @@
-﻿namespace TestCQRS.Server.DomainModel
+﻿namespace TestCQRS.Infrastructure.DomainModel
 {
 	using System;
 	using System.Collections.Generic;
-	using TestCQRS.Server.Events;
+	using TestCQRS.Infrastructure.Events;
 
 	public abstract class AggregateRoot : IAggregateRoot
 	{

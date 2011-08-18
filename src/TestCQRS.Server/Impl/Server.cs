@@ -1,10 +1,10 @@
-namespace TestCQRS.Server
+namespace TestCQRS.Server.Impl
 {
 	using System;
-	using TestCQRS.Server.Commands;
-	using TestCQRS.Server.DomainModel;
-	using TestCQRS.Server.Events;
-	using TestCQRS.Server.Queries;
+	using TestCQRS.Infrastructure.Commands;
+	using TestCQRS.Infrastructure.DomainModel;
+	using TestCQRS.Infrastructure.Events;
+	using TestCQRS.Infrastructure.Queries;
 
 	internal sealed class Server : IServer
 	{

@@ -1,9 +1,9 @@
-﻿namespace TestCQRS.Server.DomainModel.Impl
+﻿namespace TestCQRS.Infrastructure.DomainModel.Impl
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using TestCQRS.Server.Events;
+	using TestCQRS.Infrastructure.Events;
 
 	internal sealed class UnitOfWork : IUnitOfWork
 	{

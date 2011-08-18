@@ -1,6 +1,7 @@
 ﻿namespace TestCQRS.Server
 {
 	using Autofac;
+	using TestCQRS.Server.Impl;
 
 	internal sealed class AutofacModule : Module
 	{

@@ -1,4 +1,4 @@
-namespace TestCQRS.Server.Commands
+namespace TestCQRS.Infrastructure.Commands
 {
 	public abstract class CommandEventArgs
 	{

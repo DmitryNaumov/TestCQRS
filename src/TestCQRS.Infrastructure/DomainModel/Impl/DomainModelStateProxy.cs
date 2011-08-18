@@ -1,4 +1,4 @@
-﻿namespace TestCQRS.Server.DomainModel.Impl
+﻿namespace TestCQRS.Infrastructure.DomainModel.Impl
 {
 	using System;
 	using System.Threading;

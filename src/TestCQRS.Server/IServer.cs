@@ -1,7 +1,7 @@
 namespace TestCQRS.Server
 {
-	using TestCQRS.Server.Commands;
-	using TestCQRS.Server.Queries;
+	using TestCQRS.Infrastructure.Commands;
+	using TestCQRS.Infrastructure.Queries;
 
 	public interface IServer : ICommandService, IQueryService
 	{

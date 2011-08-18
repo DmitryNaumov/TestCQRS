@@ -1,4 +1,4 @@
-﻿namespace TestCQRS.Server.DomainModel
+﻿namespace TestCQRS.Infrastructure.DomainModel
 {
 	public interface IDomainModelState : IRepository
 	{

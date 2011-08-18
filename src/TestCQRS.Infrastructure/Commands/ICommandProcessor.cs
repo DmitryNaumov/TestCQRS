@@ -1,6 +1,6 @@
-﻿namespace TestCQRS.Server.Commands
+﻿namespace TestCQRS.Infrastructure.Commands
 {
-	using TestCQRS.Server.DomainModel;
+	using TestCQRS.Infrastructure.DomainModel;
 
 	public interface ICommandProcessor
 	{

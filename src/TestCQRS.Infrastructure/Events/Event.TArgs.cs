@@ -1,4 +1,4 @@
-﻿namespace TestCQRS.Server.Events
+﻿namespace TestCQRS.Infrastructure.Events
 {
 	public sealed class Event<TArgs> : Event
 	{
