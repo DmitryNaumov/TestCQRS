@@ -5,6 +5,7 @@
 	[TestClass]
 	public sealed class BuildersTest
 	{
+		[TestMethod]
 		public void ShouldCreateSecurity()
 		{
 			var security = Security.New()
@@ -13,6 +14,7 @@
 				.CUSIP("MSFT");
 		}
 
+		[TestMethod]
 		public void ShouldCreateOrder()
 		{
 			var order = Order.New()
