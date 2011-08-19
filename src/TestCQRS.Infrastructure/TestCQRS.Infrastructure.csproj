@@ -43,16 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutofacModule.cs" />
-    <Compile Include="Commands\Command.cs" />
-    <Compile Include="Commands\CommandCompletedEventArgs.cs" />
-    <Compile Include="Commands\CommandEventArgs.cs" />
-    <Compile Include="Commands\CommandFailedEventArgs.cs" />
-    <Compile Include="Commands\CommandPostedEventArgs.cs" />
-    <Compile Include="Commands\Command.TArgs.cs" />
-    <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="Commands\ICommandProcessor.cs" />
-    <Compile Include="Commands\ICommandProcessorFactory.cs" />
-    <Compile Include="Commands\ICommandService.cs" />
     <Compile Include="ComponentModel\Container.cs" />
     <Compile Include="ComponentModel\Exception.TArgs.cs" />
     <Compile Include="ComponentModel\IServiceLocator.cs" />
@@ -83,19 +73,29 @@
     <Compile Include="DomainModel\IUnitOfWork.cs" />
     <Compile Include="DomainModel\IUnitOfWorkFactory.cs" />
     <Compile Include="DomainModel\ReleaseAction.cs" />
-    <Compile Include="Events\Event.cs" />
-    <Compile Include="Events\Event.TArgs.cs" />
-    <Compile Include="Events\IEvent.cs" />
-    <Compile Include="Events\IEventHandler.cs" />
-    <Compile Include="Events\IEventHandler.TEvent.cs" />
-    <Compile Include="Events\IEventHandlerFactory.cs" />
-    <Compile Include="Events\IEventPublisher.cs" />
-    <Compile Include="Events\IEventSource.cs" />
-    <Compile Include="Events\IEventStore.cs" />
-    <Compile Include="Events\Impl\EventDispatcher.cs" />
-    <Compile Include="Events\Impl\EventHandlerFactory.cs" />
-    <Compile Include="Events\Impl\IEventDispatcher.cs" />
+    <Compile Include="Messaging.Commands\Command.cs" />
+    <Compile Include="Messaging.Commands\Command.TArgs.cs" />
+    <Compile Include="Messaging.Commands\CommandCompletedEventArgs.cs" />
+    <Compile Include="Messaging.Commands\CommandEventArgs.cs" />
+    <Compile Include="Messaging.Commands\CommandFailedEventArgs.cs" />
+    <Compile Include="Messaging.Commands\CommandPostedEventArgs.cs" />
+    <Compile Include="Messaging.Commands\ICommand.cs" />
+    <Compile Include="Messaging.Commands\ICommandProcessor.cs" />
+    <Compile Include="Messaging.Commands\ICommandProcessorFactory.cs" />
+    <Compile Include="Messaging.Commands\ICommandService.cs" />
+    <Compile Include="Messaging.Events\Event.cs" />
+    <Compile Include="Messaging.Events\Event.TArgs.cs" />
+    <Compile Include="Messaging.Events\IEvent.cs" />
+    <Compile Include="Messaging.Events\IEventPublisher.cs" />
+    <Compile Include="Messaging.Events\IEventSource.cs" />
+    <Compile Include="Messaging.Events\IEventStore.cs" />
     <Compile Include="Messaging\IMessage.cs" />
+    <Compile Include="Messaging\IMessageHandler.cs" />
+    <Compile Include="Messaging\IMessageHandler.TMessage.cs" />
+    <Compile Include="Messaging\IMessageHandlerFactory.cs" />
+    <Compile Include="Messaging\Impl\IMessageDispatcher.cs" />
+    <Compile Include="Messaging\Impl\MessageDispatcher.cs" />
+    <Compile Include="Messaging\Impl\MessageHandlerFactory.cs" />
     <Compile Include="Queries\IParameter.cs" />
     <Compile Include="Queries\IQuery.cs" />
     <Compile Include="Queries\IQueryService.cs" />
@@ -109,7 +109,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\Impl\" />
+    <Folder Include="Messaging.Commands\Impl\" />
+    <Folder Include="Messaging.Events\Impl\" />
     <Folder Include="Queries\Impl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
