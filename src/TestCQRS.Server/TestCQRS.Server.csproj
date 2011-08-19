@@ -43,8 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutofacModule.cs" />
+    <Compile Include="BookOrderCommandArgs.cs" />
+    <Compile Include="Impl\BookOrderCommandHandler.cs" />
     <Compile Include="Impl\Server.cs" />
     <Compile Include="IServer.cs" />
+    <Compile Include="OrderCommandArgs.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

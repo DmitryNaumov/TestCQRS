@@ -2,7 +2,7 @@
 {
 	using System;
 	using System.Collections.Generic;
-	using TestCQRS.Infrastructure.Events;
+	using TestCQRS.Infrastructure.Messaging.Events;
 
 	public abstract class AggregateRoot<TRoot> : IAggregateRoot where TRoot : IAggregateRoot
 	{

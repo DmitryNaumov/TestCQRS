@@ -1,4 +1,4 @@
-﻿namespace TestCQRS.Infrastructure.Events
+﻿namespace TestCQRS.Infrastructure.Messaging.Events
 {
 	using System.Collections.Generic;
 

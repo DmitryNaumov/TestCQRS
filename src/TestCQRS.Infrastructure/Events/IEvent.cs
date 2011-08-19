@@ -1,8 +1,8 @@
-﻿namespace TestCQRS.Infrastructure.Events
+﻿namespace TestCQRS.Infrastructure.Messaging.Events
 {
 	using System;
 
-	public interface IEvent
+	public interface IEvent : IMessage
 	{
 		/// <summary>
 		/// Auto-incremented event number. Used to build event sequence.

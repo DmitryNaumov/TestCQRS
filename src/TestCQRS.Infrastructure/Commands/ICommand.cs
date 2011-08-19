@@ -1,8 +1,8 @@
-﻿namespace TestCQRS.Infrastructure.Commands
+﻿namespace TestCQRS.Infrastructure.Messaging.Commands
 {
 	using System;
 
-	public interface ICommand
+	public interface ICommand : IMessage
 	{
 		/// <summary>
 		/// Gets the globally unique command identifier used to track events caused by the command.

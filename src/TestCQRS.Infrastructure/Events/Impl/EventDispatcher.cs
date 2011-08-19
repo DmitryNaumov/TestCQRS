@@ -1,59 +1,59 @@
-﻿namespace TestCQRS.Infrastructure.Events.Impl
+﻿namespace TestCQRS.Infrastructure.Messaging.Impl
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq.Expressions;
 	using System.Reflection;
 
-	internal sealed class EventDispatcher : IEventDispatcher
+	internal sealed class MessageDispatcher : IMessageDispatcher
 	{
-		private readonly Dictionary<Type, Action<IEventHandler, IEvent>> _dispatchers = new Dictionary<Type, Action<IEventHandler, IEvent>>();
-		private readonly IEventHandlerFactory _eventHandlerFactory;
+		private readonly Dictionary<Type, Action<IMessageHandler, IMessage>> _dispatchers = new Dictionary<Type, Action<IMessageHandler, IMessage>>();
+		private readonly IMessageHandlerFactory _messageHandlerFactory;
 
-		public EventDispatcher(IEventHandlerFactory eventHandlerFactory)
+		public MessageDispatcher(IMessageHandlerFactory messageHandlerFactory)
 		{
-			_eventHandlerFactory = eventHandlerFactory;
+			_messageHandlerFactory = messageHandlerFactory;
 		}
 
-		public void Dispatch(IEvent @event, params object[] parameters)
+		public void Dispatch(IMessage @message, params object[] parameters)
 		{
-			if (@event == null)
+			if (@message == null)
 			{
-				throw new ArgumentNullException("event");
+				throw new ArgumentNullException("message");
 			}
 
-			var handler = _eventHandlerFactory.Create(@event.GetType(), parameters);
-			var dynamicDispatcher = GetDynamicDispatcher(@event.GetType());
+			var handler = _messageHandlerFactory.Create(@message.GetType(), parameters);
+			var dynamicDispatcher = GetDynamicDispatcher(@message.GetType());
 
-			dynamicDispatcher(handler, @event);
+			dynamicDispatcher(handler, @message);
 		}
 
-		private Action<IEventHandler, IEvent> GetDynamicDispatcher(Type eventType)
+		private Action<IMessageHandler, IMessage> GetDynamicDispatcher(Type messageType)
 		{
 			lock (_dispatchers)
 			{
-				Action<IEventHandler, IEvent> dispatcher;
-				if (!_dispatchers.TryGetValue(eventType, out dispatcher))
+				Action<IMessageHandler, IMessage> dispatcher;
+				if (!_dispatchers.TryGetValue(messageType, out dispatcher))
 				{
-					dispatcher = CompileDynamicDispatcher(eventType);
-					_dispatchers.Add(eventType, dispatcher);
+					dispatcher = CompileDynamicDispatcher(messageType);
+					_dispatchers.Add(messageType, dispatcher);
 				}
 
 				return dispatcher;
 			}
 		}
 
-		private static Action<IEventHandler, IEvent> CompileDynamicDispatcher(Type eventType)
+		private static Action<IMessageHandler, IMessage> CompileDynamicDispatcher(Type messageType)
 		{
-			var handlerParameter = Expression.Parameter(typeof(IEventHandler), "handler");
-			var eventParameter = Expression.Parameter(eventType, "event");
+			var handlerParameter = Expression.Parameter(typeof(IMessageHandler), "handler");
+			var messageParameter = Expression.Parameter(messageType, "message");
 
-			var handlerType = typeof(IEventHandler<>).MakeGenericType(eventType);
+			var handlerType = typeof(IMessageHandler<>).MakeGenericType(messageType);
 			var handleMethod = handlerType.GetMethod("Handle", BindingFlags.Public | BindingFlags.Instance);
 
 			var castExpr = Expression.Convert(handlerParameter, handlerType);
-			var invokeExpr = Expression.Call(castExpr, handleMethod, eventParameter);
-			var lambdaExpr = Expression.Lambda<Action<IEventHandler, IEvent>>(invokeExpr, handlerParameter, eventParameter);
+			var invokeExpr = Expression.Call(castExpr, handleMethod, messageParameter);
+			var lambdaExpr = Expression.Lambda<Action<IMessageHandler, IMessage>>(invokeExpr, handlerParameter, messageParameter);
 
 			return lambdaExpr.Compile();
 		}

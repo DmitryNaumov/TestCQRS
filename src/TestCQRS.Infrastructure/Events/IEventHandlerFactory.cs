@@ -1,8 +1,8 @@
-﻿namespace TestCQRS.Infrastructure.Events
+﻿namespace TestCQRS.Infrastructure.Messaging
 {
 	using System;
 
-	public interface IEventHandlerFactory
+	public interface IMessageHandlerFactory
 	{
 		/// <summary>
 		/// Registers handler.
@@ -11,11 +11,11 @@
 		void Register(Type handlerType);
 
 		/// <summary>
-		/// Creates a new handler instance to handle an event.
+		/// Creates a new handler instance to handle an message.
 		/// </summary>
-		/// <param name="eventType">Event type to handle.</param>
+		/// <param name="messageType">Message type to handle.</param>
 		/// <param name="parameters">Handler parameters.</param>
 		/// <returns>Returns new handler instance.</returns>
-		IEventHandler Create(Type eventType, params object[] parameters);
+		IMessageHandler Create(Type messageType, params object[] parameters);
 	}
 }

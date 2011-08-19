@@ -1,4 +1,4 @@
-namespace TestCQRS.Infrastructure.Commands
+namespace TestCQRS.Infrastructure.Messaging.Commands
 {
 	public sealed class CommandCompletedEventArgs : CommandEventArgs
 	{

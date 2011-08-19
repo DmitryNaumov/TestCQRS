@@ -1,9 +1,9 @@
-namespace TestCQRS.Infrastructure.Events
+namespace TestCQRS.Infrastructure.Messaging
 {
 	/// <summary>
-	/// Marker interface to avoid passing event handlers as <see cref="object"/>.
+	/// Marker interface to avoid passing message handlers as <see cref="object"/>.
 	/// </summary>
-	public interface IEventHandler
+	public interface IMessageHandler
 	{
 	}
 }

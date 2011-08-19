@@ -1,9 +1,9 @@
 namespace TestCQRS.Server.Impl
 {
 	using System;
-	using TestCQRS.Infrastructure.Commands;
+	using TestCQRS.Infrastructure.Messaging.Commands;
 	using TestCQRS.Infrastructure.DomainModel;
-	using TestCQRS.Infrastructure.Events;
+	using TestCQRS.Infrastructure.Messaging.Events;
 	using TestCQRS.Infrastructure.Queries;
 
 	internal sealed class Server : IServer

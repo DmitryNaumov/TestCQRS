@@ -43,15 +43,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutofacModule.cs" />
+    <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandCompletedEventArgs.cs" />
     <Compile Include="Commands\CommandEventArgs.cs" />
     <Compile Include="Commands\CommandFailedEventArgs.cs" />
     <Compile Include="Commands\CommandPostedEventArgs.cs" />
+    <Compile Include="Commands\Command.TArgs.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\ICommandProcessor.cs" />
     <Compile Include="Commands\ICommandProcessorFactory.cs" />
     <Compile Include="Commands\ICommandService.cs" />
     <Compile Include="ComponentModel\Container.cs" />
+    <Compile Include="ComponentModel\Exception.TArgs.cs" />
     <Compile Include="ComponentModel\IServiceLocator.cs" />
     <Compile Include="ComponentModel\IStarter.cs" />
     <Compile Include="ComponentModel\IStartable.cs" />
@@ -92,6 +95,7 @@
     <Compile Include="Events\Impl\EventDispatcher.cs" />
     <Compile Include="Events\Impl\EventHandlerFactory.cs" />
     <Compile Include="Events\Impl\IEventDispatcher.cs" />
+    <Compile Include="Messaging\IMessage.cs" />
     <Compile Include="Queries\IParameter.cs" />
     <Compile Include="Queries\IQuery.cs" />
     <Compile Include="Queries\IQueryService.cs" />

@@ -1,7 +1,7 @@
 ﻿namespace TestCQRS.Infrastructure.DomainModel
 {
 	using System;
-	using TestCQRS.Infrastructure.Events;
+	using TestCQRS.Infrastructure.Messaging.Events;
 
 	public interface IUnitOfWork : IDisposable
 	{

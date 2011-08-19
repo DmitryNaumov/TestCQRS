@@ -2,7 +2,7 @@
 {
 	using Autofac;
 	using TestCQRS.Infrastructure.ComponentModel.Impl;
-	using TestCQRS.Infrastructure.Events.Impl;
+	using TestCQRS.Infrastructure.Messaging.Impl;
 
 	internal sealed class AutofacModule : Module
 	{
@@ -12,8 +12,8 @@
 
 			builder.RegisterType<Starter>().AsImplementedInterfaces().SingleInstance();
 
-			builder.RegisterType<EventDispatcher>().AsImplementedInterfaces().SingleInstance();
-			builder.RegisterType<EventHandlerFactory>().AsImplementedInterfaces().SingleInstance();
+			builder.RegisterType<MessageDispatcher>().AsImplementedInterfaces().SingleInstance();
+			builder.RegisterType<MessageHandlerFactory>().AsImplementedInterfaces().SingleInstance();
 		}
 	}
 }

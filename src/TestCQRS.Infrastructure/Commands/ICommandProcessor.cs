@@ -1,4 +1,4 @@
-﻿namespace TestCQRS.Infrastructure.Commands
+﻿namespace TestCQRS.Infrastructure.Messaging.Commands
 {
 	using TestCQRS.Infrastructure.DomainModel;
 

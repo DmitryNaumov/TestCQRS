@@ -1,7 +1,7 @@
-﻿namespace TestCQRS.Infrastructure.Events.Impl
+﻿namespace TestCQRS.Infrastructure.Messaging.Impl
 {
-	internal interface IEventDispatcher
+	internal interface IMessageDispatcher
 	{
-		void Dispatch(IEvent @event, params object[] parameters);
+		void Dispatch(IMessage message, params object[] parameters);
 	}
 }

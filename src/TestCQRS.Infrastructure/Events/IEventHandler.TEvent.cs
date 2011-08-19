@@ -1,11 +1,11 @@
-namespace TestCQRS.Infrastructure.Events
+namespace TestCQRS.Infrastructure.Messaging
 {
-	public interface IEventHandler<in TEvent> : IEventHandler where TEvent : IEvent
+	public interface IMessageHandler<in TMessage> : IMessageHandler where TMessage : IMessage
 	{
 		/// <summary>
-		/// Handles event.
+		/// Handles message.
 		/// </summary>
-		/// <param name="event">Event to handle.</param>
-		void Handle(TEvent @event);
+		/// <param name="message">Message to handle.</param>
+		void Handle(TMessage message);
 	}
 }
