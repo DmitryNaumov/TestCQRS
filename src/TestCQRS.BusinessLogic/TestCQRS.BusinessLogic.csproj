@@ -30,9 +30,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.2.5.2.830\lib\NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.2.5.2.830\lib\NET40\Autofac.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutofacModule.cs" />
+    <Compile Include="Commands\BookOrderCommandArgs.cs" />
+    <Compile Include="Commands\Impl\BookOrderCommandHandler.cs" />
+    <Compile Include="Commands\OrderCommandArgs.cs" />
     <Compile Include="DomainModel.Builders\Impl\OrderBuilder.cs" />
     <Compile Include="DomainModel.Builders\Impl\SecurityBuilder.cs" />
     <Compile Include="DomainModel.Builders\IOrderBuilder.cs" />
@@ -52,5 +62,9 @@
       <Name>TestCQRS.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
