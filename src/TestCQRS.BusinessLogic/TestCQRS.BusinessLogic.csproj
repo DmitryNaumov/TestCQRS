@@ -55,6 +55,7 @@
     <Compile Include="DomainModel\OrderStatus.cs" />
     <Compile Include="DomainModel\Security.cs" />
     <Compile Include="DomainModel\Ticket.cs" />
+    <Compile Include="DomainModel\Impl\OrderRules.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestCQRS.Infrastructure\TestCQRS.Infrastructure.csproj">

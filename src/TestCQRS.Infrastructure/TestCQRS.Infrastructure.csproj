@@ -104,6 +104,12 @@
     <Compile Include="Queries\QueryEventArgs.cs" />
     <Compile Include="Queries\QueryFailedEventArgs.cs" />
     <Compile Include="Queries\QueryPostedEventArgs.cs" />
+    <Compile Include="DomainModel.Rules\IRule.cs" />
+    <Compile Include="DomainModel.Rules\IRuleAssertion.cs" />
+    <Compile Include="DomainModel.Rules\Rule.cs" />
+    <Compile Include="DomainModel.Rules\Impl\RuleAssertion.cs" />
+    <Compile Include="DomainModel.Rules\RuleAssertionExtensions.cs" />
+    <Compile Include="DomainModel.Rules\BrokenRuleArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

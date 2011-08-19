@@ -19,20 +19,18 @@
 
 		public decimal Quantity { get; private set; }
 
+		// TODO: auto-calculated aggregate
+		public decimal ExecutedQuantity { get; private set; }
+
 		public static IOrderBuilder New()
 		{
 			return new OrderBuilder();
 		}
 
-		public Ticket AddTicket()
-		{
-			var ticket = new Ticket(this);
-			_tickets.Add(ticket);
-			return ticket;
-		}
-
 		public void Book()
 		{
+			Validate("BookingRules");
+
 			// TODO:
 		}
 	}

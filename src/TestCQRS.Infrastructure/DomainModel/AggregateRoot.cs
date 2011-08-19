@@ -33,6 +33,15 @@
 			_events.Add(Event.New(args));
 		}
 
+		/// <summary>
+		/// Validates given rule against the current state.
+		/// </summary>
+		/// <param name="ruleId">Rule identifier.</param>
+		protected void Validate(string ruleId)
+		{
+			// TODO:
+		}
+
 		#region IEventSource Members
 
 		IEnumerable<IEvent> IEventSource.GetEvents()
