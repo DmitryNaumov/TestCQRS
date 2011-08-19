@@ -15,17 +15,17 @@
 			_messageHandlerFactory = messageHandlerFactory;
 		}
 
-		public void Dispatch(IMessage @message, params object[] parameters)
+		public void Dispatch(IMessage message, params object[] parameters)
 		{
-			if (@message == null)
+			if (message == null)
 			{
 				throw new ArgumentNullException("message");
 			}
 
-			var handler = _messageHandlerFactory.Create(@message.GetType(), parameters);
-			var dynamicDispatcher = GetDynamicDispatcher(@message.GetType());
+			var handler = _messageHandlerFactory.Create(message.GetType(), parameters);
+			var dynamicDispatcher = GetDynamicDispatcher(message.GetType());
 
-			dynamicDispatcher(handler, @message);
+			dynamicDispatcher(handler, message);
 		}
 
 		private Action<IMessageHandler, IMessage> GetDynamicDispatcher(Type messageType)
