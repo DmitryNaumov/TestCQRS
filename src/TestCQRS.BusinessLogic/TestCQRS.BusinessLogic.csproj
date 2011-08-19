@@ -33,18 +33,18 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Allocation.cs" />
-    <Compile Include="Broker.cs" />
-    <Compile Include="Builders\ISecurityBuilder.cs" />
-    <Compile Include="Builders\IOrderBuilder.cs" />
-    <Compile Include="Builders\Impl\SecurityBuilder.cs" />
-    <Compile Include="Builders\ITicketBuilder.cs" />
-    <Compile Include="Execution.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="Builders\Impl\OrderBuilder.cs" />
-    <Compile Include="OrderStatus.cs" />
-    <Compile Include="Security.cs" />
-    <Compile Include="Ticket.cs" />
+    <Compile Include="DomainModel.Builders\Impl\OrderBuilder.cs" />
+    <Compile Include="DomainModel.Builders\Impl\SecurityBuilder.cs" />
+    <Compile Include="DomainModel.Builders\IOrderBuilder.cs" />
+    <Compile Include="DomainModel.Builders\ISecurityBuilder.cs" />
+    <Compile Include="DomainModel.Builders\ITicketBuilder.cs" />
+    <Compile Include="DomainModel\Allocation.cs" />
+    <Compile Include="DomainModel\Broker.cs" />
+    <Compile Include="DomainModel\Execution.cs" />
+    <Compile Include="DomainModel\Order.cs" />
+    <Compile Include="DomainModel\OrderStatus.cs" />
+    <Compile Include="DomainModel\Security.cs" />
+    <Compile Include="DomainModel\Ticket.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestCQRS.Infrastructure\TestCQRS.Infrastructure.csproj">

@@ -30,5 +30,10 @@
 			_tickets.Add(ticket);
 			return ticket;
 		}
+
+		public void Book()
+		{
+			// TODO:
+		}
 	}
 }
