@@ -1,6 +1,7 @@
 ﻿namespace TestCQRS.BusinessLogic.Tests
 {
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
+	using TestCQRS.BusinessLogic.DomainModel;
 
 	[TestClass]
 	public sealed class BuildersTest

@@ -19,7 +19,7 @@
 		public void Commit()
 		{
 			var events = GetEventSources(_model)
-				.SelectMany(eventSource => eventSource.FlushEvents())
+				.SelectMany(eventSource => eventSource.GetEvents())
 				.OrderBy(@event => @event.SeqNo)
 				.ToArray();
 

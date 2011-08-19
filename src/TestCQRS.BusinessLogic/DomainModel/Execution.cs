@@ -1,4 +1,4 @@
-﻿namespace TestCQRS.BusinessLogic
+﻿namespace TestCQRS.BusinessLogic.DomainModel
 {
 	using System;
 	using TestCQRS.Infrastructure.DomainModel;

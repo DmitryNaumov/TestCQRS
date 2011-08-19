@@ -4,6 +4,6 @@
 
 	public interface IEventSource
 	{
-		IEnumerable<IEvent> FlushEvents();
+		IEnumerable<IEvent> GetEvents();
 	}
 }

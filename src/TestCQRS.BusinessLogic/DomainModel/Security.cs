@@ -1,7 +1,7 @@
-﻿namespace TestCQRS.BusinessLogic
+﻿namespace TestCQRS.BusinessLogic.DomainModel
 {
-	using TestCQRS.BusinessLogic.Builders;
-	using TestCQRS.BusinessLogic.Builders.Impl;
+	using TestCQRS.BusinessLogic.DomainModel.Builders;
+	using TestCQRS.BusinessLogic.DomainModel.Builders.Impl;
 	using TestCQRS.Infrastructure.DomainModel;
 
 	public sealed class Security : AggregateRoot<Security>

@@ -1,4 +1,4 @@
-namespace TestCQRS.BusinessLogic.Builders.Impl
+namespace TestCQRS.BusinessLogic.DomainModel.Builders.Impl
 {
 	internal sealed class SecurityBuilder : ISecurityBuilder
 	{

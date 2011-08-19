@@ -1,4 +1,4 @@
-﻿namespace TestCQRS.BusinessLogic
+﻿namespace TestCQRS.BusinessLogic.DomainModel
 {
 	public enum OrderStatus
 	{

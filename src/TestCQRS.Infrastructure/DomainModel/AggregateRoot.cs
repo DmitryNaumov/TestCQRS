@@ -35,11 +35,9 @@
 
 		#region IEventSource Members
 
-		IEnumerable<IEvent> IEventSource.FlushEvents()
+		IEnumerable<IEvent> IEventSource.GetEvents()
 		{
-			var events = _events.ToArray();
-			_events.Clear();
-			return events;
+			return _events.AsReadOnly();
 		}
 
 		#endregion

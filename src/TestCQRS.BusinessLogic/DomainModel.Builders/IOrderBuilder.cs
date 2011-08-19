@@ -1,4 +1,4 @@
-namespace TestCQRS.BusinessLogic.Builders
+namespace TestCQRS.BusinessLogic.DomainModel.Builders
 {
 	public interface IOrderBuilder
 	{

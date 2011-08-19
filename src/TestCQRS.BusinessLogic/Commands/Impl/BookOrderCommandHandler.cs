@@ -1,4 +1,4 @@
-﻿namespace TestCQRS.Server.Impl
+﻿namespace TestCQRS.BusinessLogic.Commands.Impl
 {
 	using TestCQRS.Infrastructure.Messaging;
 	using TestCQRS.Infrastructure.Messaging.Commands;

@@ -1,4 +1,4 @@
-﻿namespace TestCQRS.Server
+﻿namespace TestCQRS.BusinessLogic.Commands
 {
 	public sealed class BookOrderCommandArgs : OrderCommandArgs
 	{
