@@ -43,8 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutofacModule.cs" />
-    <Compile Include="Impl\Server.cs" />
-    <Compile Include="IServer.cs" />
+    <Compile Include="Facade\Impl\Server.cs" />
+    <Compile Include="Facade\IServer.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
