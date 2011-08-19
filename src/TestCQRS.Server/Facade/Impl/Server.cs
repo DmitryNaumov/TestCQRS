@@ -1,4 +1,4 @@
-namespace TestCQRS.Server.Impl
+namespace TestCQRS.Server.Facade.Impl
 {
 	using System;
 	using TestCQRS.Infrastructure.Messaging.Commands;
