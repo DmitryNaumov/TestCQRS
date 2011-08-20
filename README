@@ -1,1 +1,1 @@
-Just internal drafts for the CQRS architecture pattern combined with the in-memory domain model state a-la LMAX.
+Just internal drafts for the CQRS/EventSourcing architecture patterns combined with the in-memory domain model state a-la LMAX.
